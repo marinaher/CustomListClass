@@ -63,9 +63,9 @@ namespace CustomListClass
             Console.WriteLine("\nOverload + Operator to add two instances of my custom class.");
             CustomGenericList<string> TemporaryList = new CustomGenericList<string>();
 
-            TemporaryList.Add("456");
-            TemporaryList.Add("789");
-            TemporaryList.Add("123");
+            TemporaryList.Add("4");
+            TemporaryList.Add("7");
+            TemporaryList.Add("1");
             
             CustomGenericList<string> CombinedList = new CustomGenericList<string>();
             CombinedList = CustomGenericList + TemporaryList;

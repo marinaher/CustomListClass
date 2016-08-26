@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CustomListClass
 {
-    public class CustomGenericList<T> : IEnumerable<T>                  //implementing IEnumerable literally applies that this class is enumerable 
-    {                                                                   //i.e.can be iterated and IEnumerator merely returns the enumerator and hence IEnumberable implements IEnumerator.
+    public class CustomGenericList<T> : IEnumerable<T>
+    {
         public T[] innerArray;     
-        public T[] GenericArrayList;                                        //IEnumerator remembers it's place to go back and after running thru
+        public T[] GenericArrayList;
 
         public CustomGenericList()
         {
@@ -28,15 +28,15 @@ namespace CustomListClass
         }
         public void Add(T item)
         {
-            T[] temporaryArray = new T[innerArray.Length + 1];           //created a 'temporaryArray' to hold items
-            for (int i = 0; i < innerArray.Length; i++)                  //to add items to end of an array when new array is created.
+            T[] temporaryArray = new T[innerArray.Length + 1]; 
+            for (int i = 0; i < innerArray.Length; i++)
             {
                 temporaryArray[i] = innerArray[i];
             }
             temporaryArray[innerArray.Length] = item;
-            innerArray = temporaryArray;                                 //now items array will have all the same things as the new temporary array
+            innerArray = temporaryArray;
         }
-        public void RemoveAt(T removeItem)                               //removing from array
+        public void RemoveAt(T removeItem)
         {
             bool notFound = true;
             T[] temporaryGenericArray = new T[innerArray.Length - 1];
@@ -44,7 +44,7 @@ namespace CustomListClass
             {
                 if (notFound)
                 {
-                    if (innerArray[i].Equals(removeItem))                //.Equals: compares the contents of two StringBuilders. Returns true or false;
+                    if (innerArray[i].Equals(removeItem))
                     {
                         notFound = false;
                     }
