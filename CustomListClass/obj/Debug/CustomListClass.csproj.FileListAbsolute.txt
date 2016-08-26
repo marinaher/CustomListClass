@@ -1,0 +1,6 @@
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe.config
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.pdb
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.csprojResolveAssemblyReference.cache
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.exe
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.pdb
