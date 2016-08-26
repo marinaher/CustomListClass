@@ -13,6 +13,8 @@ namespace CustomListClass
         {
             CustomGenericList<string> CustomGenericList = new CustomGenericList<string>(new string[] { "apple", "banana" });
 
+            //added fruits below to Array
+
             CustomGenericList.Add("pear");
             CustomGenericList.Add("blueberry");
             CustomGenericList.Add("raspberry");
@@ -20,14 +22,16 @@ namespace CustomListClass
 
             CustomGenericList.RemoveAt("raspberry");
 
+            string GenericString = CustomGenericList.GenericString();
+            Console.WriteLine(GenericString);
+            Console.ReadLine();
+
             string combindedString = string.Join(", ", CustomGenericList.ToArray());
             Console.WriteLine(String.Join(", ", CustomGenericList));
             Console.ReadLine();
 
-            //CustomGenericList<int> GenericAddOverload = new CustomGenericList<int>(new int[] { 5, 10});
 
 
-            //Console.WriteLine("Count: {0}", CustomGenericList.count);
         }
     }
 }

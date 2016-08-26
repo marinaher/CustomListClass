@@ -62,18 +62,16 @@ namespace CustomListClass
             innerArray = temporaryGenericArray;
         }
 
-        public static string ConvertStringArrayToString(string[] array)               //ideal for when you need to loop over your string array before adding the elements.
+        public string GenericString()
         {
-            StringBuilder builder = new StringBuilder();
-            foreach (string value in array)
+            string genericString = "Delicious Fruits: ";
+            for (int i = 0; i < innerArray.Length; i++)
             {
-                builder.Append(value);                                                //Append: adds contents of it's arguments to the buffer in the StringBuilder
-                builder.Append('.');                                                  //Arguements are converted to strings with ToString
+                genericString = genericString + "\n" + innerArray[i];
             }
-            string result = string.Join(", ", array);
-            return builder.ToString();                                                //ToString: returns the buffer. Returns contents as a string.
+            return genericString;
         }
-        public int Count()                                                            //Count
+        public int Count()
         {
             int index = 0;
             for (int i = 0; i < innerArray.Length; i++)

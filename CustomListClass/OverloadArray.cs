@@ -8,27 +8,13 @@ namespace CustomListClass
 {
     public class OverloadArray
     {
-        private int _a, _b;
-        public OverloadArray(int a, int b)                  //basic constructor
-        {
-            _a = a; 
-            _b = b;
-        }
-        public int a
-        {
-            get { return _a; }
-            set { _b = value; }
-        }
-        public int b
-        {
-            get { return _b; }
-            set { _b = value; }
-        }
-        public static OverloadArray operator +()
-        {
-            OverloadArray overload = new OverloadArray();
+
+
+        //public static OverloadArray operator +()
+        //{
+        //    OverloadArray overload = new OverloadArray(OverloadArray a, OverloadArray b);
             
-        }
+        //}
         //public static OverloadArray operator +(OverloadArray input1, OverloadArray input2)
         //{
         //    OverloadArray wz = new OverloadArray(input1 + input2, input2 + input3);
