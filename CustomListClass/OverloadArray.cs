@@ -17,9 +17,18 @@ namespace CustomListClass
             this.indexA = indexA;
             this.indexB = indexB;
         }
+        public OverloadArray(int indexB, int indexC)
+        {
+            this.indexB = indexB;
+            this.indexC = indexC;
+        }
         public void Display()
         {
             Console.WriteLine(indexA);
+            Console.WriteLine(indexB);
+        }
+        public void Display1()
+        {
             Console.WriteLine(indexB);
             Console.WriteLine(indexC);
         }
@@ -28,6 +37,11 @@ namespace CustomListClass
         {
             OverloadArray newOverload = new OverloadArray((indexA1.indexA + indexB1.indexA), (indexA1.indexB + indexB1.indexB));
             return newOverload;
+        }
+        public static OverloadArray operator -(OverloadArray indexB1, OverloadArray indexC1)
+        {
+            OverloadArray newOverload1 = new OverloadArray(indexB1.indexB - indexC1.indexB, indexB1.indexC - indexC1.indexC);
+            return newOverload1;
         }
     }
 }
