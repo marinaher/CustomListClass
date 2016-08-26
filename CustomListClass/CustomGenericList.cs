@@ -67,7 +67,7 @@ namespace CustomListClass
             string genericString = "Delicious Fruits: ";
             for (int i = 0; i < innerArray.Length; i++)
             {
-                genericString = genericString + "\n" + innerArray[i];
+                genericString = genericString + ", " + innerArray[i];
             }
             return genericString;
         }
@@ -79,6 +79,14 @@ namespace CustomListClass
                 index++;
             }
             return index;
+        }
+
+        public void Print()
+        {
+            foreach (T item in innerArray)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()

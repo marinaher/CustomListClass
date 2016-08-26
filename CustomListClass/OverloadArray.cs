@@ -8,27 +8,26 @@ namespace CustomListClass
 {
     public class OverloadArray
     {
+        public string indexA;
+        public int indexB;
+        public int indexC;
 
+        public OverloadArray(string indexA, int indexB)
+        {
+            this.indexA = indexA;
+            this.indexB = indexB;
+        }
+        public void Display()
+        {
+            Console.WriteLine(indexA);
+            Console.WriteLine(indexB);
+            Console.WriteLine(indexC);
+        }
 
-        //public static OverloadArray operator +()
-        //{
-        //    OverloadArray overload = new OverloadArray(OverloadArray a, OverloadArray b);
-            
-        //}
-        //public static OverloadArray operator +(OverloadArray input1, OverloadArray input2)
-        //{
-        //    OverloadArray wz = new OverloadArray(input1 + input2, input2 + input3);
-        //    return wz;
-        //}
-        //public void display()
-        //{
-        //    Console.WriteLine(w);
-        //    Console.WriteLine(z);
-        //}
-        //public static OverloadArray -(OverloadArray w, OverloadArray z)
-        //{
-        //    OverloadArray wz = new OverloadArray(w - y, y - z);
-        //    return wz;
-        //}
+        public static OverloadArray operator +(OverloadArray indexA1, OverloadArray indexB1)
+        {
+            OverloadArray newOverload = new OverloadArray((indexA1.indexA + indexB1.indexA), (indexA1.indexB + indexB1.indexB));
+            return newOverload;
+        }
     }
 }

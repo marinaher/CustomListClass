@@ -19,18 +19,32 @@ namespace CustomListClass
             CustomGenericList.Add("blueberry");
             CustomGenericList.Add("raspberry");
             CustomGenericList.Add("grapefruit");
+            CustomGenericList.Print();
+            Console.ReadLine();
 
+            Console.WriteLine("Removed raspberry from arrayList");
             CustomGenericList.RemoveAt("raspberry");
+            CustomGenericList.Print();
+            Console.ReadLine();
 
             string GenericString = CustomGenericList.GenericString();
             Console.WriteLine(GenericString);
             Console.ReadLine();
 
-            string combindedString = string.Join(", ", CustomGenericList.ToArray());
-            Console.WriteLine(String.Join(", ", CustomGenericList));
+
+            Console.WriteLine("There are {0} fruits in my arrayList now.", CustomGenericList.Count());
+            CustomGenericList.Print();
             Console.ReadLine();
 
+            //Overloading + operator
+            OverloadArray overload1 = new OverloadArray("Nick", 26);
+            overload1.Display();
 
+            OverloadArray overload2 = new OverloadArray("Carter", 21);
+            overload2.Display();
+
+            OverloadArray overload3 = overload1 + overload2;
+            overload3.Display();
 
         }
     }
