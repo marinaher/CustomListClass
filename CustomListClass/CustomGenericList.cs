@@ -11,9 +11,9 @@ namespace CustomListClass
     {                                                                   //i.e.can be iterated and IEnumerator merely returns the enumerator and hence IEnumberable implements IEnumerator.
         public T[] innerArray;                                          //IEnumerator remembers it's place to go back and after running thru
 
-        public CustomGenericList(T[] x)
+        public CustomGenericList()
         {
-            this.innerArray = x;
+            innerArray = new T[0];
         }
         public IEnumerator<T> GetEnumerator()
         {
@@ -25,7 +25,6 @@ namespace CustomListClass
                 }
             }
         }
-
         public void Add(T item)
         {
             T[] temporaryArray = new T[innerArray.Length + 1];           //created a 'temporaryArray' to hold items
@@ -36,7 +35,6 @@ namespace CustomListClass
             temporaryArray[innerArray.Length] = item;
             innerArray = temporaryArray;                                 //now items array will have all the same things as the new temporary array
         }
-
         public void RemoveAt(T removeItem)                               //removing from array
         {
             bool notFound = true;
@@ -61,7 +59,6 @@ namespace CustomListClass
             }
             innerArray = temporaryGenericArray;
         }
-
         public string GenericString()
         {
             string genericString = "Delicious Fruits: ";
@@ -71,6 +68,36 @@ namespace CustomListClass
             }
             return genericString;
         }
+
+        public static CustomGenericList<T> operator +(CustomGenericList<T> List1, CustomGenericList<T> List2)
+        {
+            CustomGenericList<T> combinedLists = new CustomGenericList<T>();
+            foreach (T item in List1.innerArray)
+            {
+                combinedLists.Add(item);
+            }
+            foreach (T item in List2.innerArray)
+            {
+                combinedLists.Add(item);
+            }
+            return combinedLists;
+        }
+
+        public static CustomGenericList<T> operator -(CustomGenericList<T> List1, CustomGenericList<T> List2)
+        {
+            for (int i = 0; i < List1.Count(); i++)
+            {
+                for (int j = 0; j < List2.Count(); j++)
+                {
+                    if (List1.innerArray[i].Equals(List2.innerArray[j]))
+                    {
+                        List1.RemoveAt(List2.innerArray[j]);
+                    }
+                }
+            }
+            return List1;
+        }
+
         public int Count()
         {
             int index = 0;
@@ -80,13 +107,16 @@ namespace CustomListClass
             }
             return index;
         }
-
         public void Print()
         {
             foreach (T item in innerArray)
             {
                 Console.WriteLine(item);
             }
+        }
+        public static CustomGenericList<T> Zipper = new CustomGenericList<T>()
+        {
+
         }
 
         IEnumerator IEnumerable.GetEnumerator()
