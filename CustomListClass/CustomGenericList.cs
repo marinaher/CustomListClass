@@ -9,7 +9,8 @@ namespace CustomListClass
 {
     public class CustomGenericList<T> : IEnumerable<T>                  //implementing IEnumerable literally applies that this class is enumerable 
     {                                                                   //i.e.can be iterated and IEnumerator merely returns the enumerator and hence IEnumberable implements IEnumerator.
-        public T[] innerArray;                                          //IEnumerator remembers it's place to go back and after running thru
+        public T[] innerArray;     
+        public T[] GenericArrayList;                                        //IEnumerator remembers it's place to go back and after running thru
 
         public CustomGenericList()
         {
@@ -114,14 +115,24 @@ namespace CustomListClass
                 Console.WriteLine(item);
             }
         }
-        public static CustomGenericList<T> Zipper = new CustomGenericList<T>()
+        public void Zipper(CustomGenericList<T> List1, CustomGenericList<T> List2)
         {
-
+            if (List1.innerArray.Length > List2.innerArray.Length || List1.innerArray.Length < List2.innerArray.Length || List1.innerArray.Length == List2.innerArray.Length)
+            {
+                for (int i = 0; i < List2.innerArray.Length; i++)
+                {
+                    Console.WriteLine("{0} \t{1}", List1.innerArray[i], List2.innerArray[i]);
+                }
+                for (int i = List2.innerArray.Length; i < List1.innerArray.Length; i++)
+                {
+                    Console.WriteLine("{0}", List1.innerArray[i]);
+                }
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }

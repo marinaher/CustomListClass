@@ -63,8 +63,9 @@ namespace CustomListClass
             Console.WriteLine("\nOverload + Operator to add two instances of my custom class.");
             CustomGenericList<string> TemporaryList = new CustomGenericList<string>();
 
-            TemporaryList.Add("pie");
-            TemporaryList.Add("cheesecake");
+            TemporaryList.Add("456");
+            TemporaryList.Add("789");
+            TemporaryList.Add("123");
             
             CustomGenericList<string> CombinedList = new CustomGenericList<string>();
             CombinedList = CustomGenericList + TemporaryList;
@@ -76,6 +77,14 @@ namespace CustomListClass
             RemoveFromList = CustomGenericList - TemporaryList;
             RemoveFromList.Print();
             Console.ReadLine();
+
+            //Zipper
+            Console.WriteLine("\nZipper two Custom Lists");
+            CustomGenericList<string> ZipperList = new CustomGenericList<string>();
+            ZipperList.Zipper(CustomGenericList, TemporaryList);
+            ZipperList.Print();
+            Console.ReadLine();
+            
         }
     }
 }
